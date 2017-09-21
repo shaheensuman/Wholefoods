@@ -4,8 +4,11 @@ import com.wholefood.automation.framework.controller.*;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by jahangir shaheen on 8/12/2017.
@@ -18,17 +21,21 @@ public class WholeFoodScriptBase   {
     @BeforeMethod
     public void setUp() {
 
-                  ChromeDriverManager.getInstance().setup();
+
+                /*  ChromeDriverManager.getInstance().setup();
                     driver = new ChromeDriver();
+                    */
 
             /*    InternetExplorerDriverManager.getInstance().setup();
                   driver=new InternetExplorerDriver();    */
 
-               // FirefoxDriverManager.getInstance().setup();
-                 // driver=new FirefoxDriver();
+        String DriverPath=System.getProperty("user.dir");
+        String FFpath=DriverPath+"\\Drivers\\FF\\32bits\\geckodriver.exe";
+        System.out.println(DriverPath);
+        System.out.println(FFpath);
 
-         // System.setProperty("webdriver.gecko.driver","C:\\MyDevelopment\\Macys-POM\\Drivers\\FF\\32bits\\geckodriver.exe");
-         // driver=new FirefoxDriver();
+        System.setProperty("webdriver.gecko.driver",FFpath);
+        driver=new FirefoxDriver();
 
        /* System.setProperty("webdriver.chrome.driver","C:\\MyDevelopment\\Macys-POM\\Drivers\\CH\\32Bits\\chromedriver.exe");
         driver=new ChromeDriver();    */
@@ -37,9 +44,10 @@ public class WholeFoodScriptBase   {
          driver=new InternetExplorerDriver() ; */
 
 
-        driver.manage().window().maximize();
+       // driver.manage().window().maximize();
         driver.navigate().to("https://www.wholefoodsmarket.com/");
         driver.manage().deleteAllCookies();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
     }
     public ApplicationController wholeFood(){
@@ -53,7 +61,7 @@ public class WholeFoodScriptBase   {
     public void tearDown() {
         wholeFood =null;
         if (driver!=null){
-            driver.close();
+          //  driver.close();
             driver.quit();
         }
 
