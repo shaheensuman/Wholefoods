@@ -1,4 +1,4 @@
-package test;
+package com.wholefood.automation.test;
 
 import com.wholefood.automation.framework.DataProvider.WholeFoodData;
 import com.wholefood.automation.framework.WholeFoodScriptBase;

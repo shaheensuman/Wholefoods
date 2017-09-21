@@ -1,4 +1,4 @@
-package test;
+package com.wholefood.automation.test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.wholefood.automation.framework.WholeFoodScriptBase;

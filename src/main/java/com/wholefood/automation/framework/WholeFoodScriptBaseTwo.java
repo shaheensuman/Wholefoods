@@ -1,7 +1,7 @@
 package com.wholefood.automation.framework;
 
 import com.wholefood.automation.framework.Reports.ExtentTestNGITestListener;
-import com.wholefood.automation.framework.controller.*;
+import com.wholefood.automation.framework.controller.ApplicationController;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -11,15 +11,13 @@ import org.testng.annotations.Listeners;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by jahangir shaheen on 8/12/2017.
+ * Created by jahangir shaheen on 9/21/2017.
  */
-
 @Listeners({ExtentTestNGITestListener.class})
 
-public class WholeFoodScriptBase   {
-
-  public WebDriver driver=null;
-  ApplicationController wholeFood=null;
+public class WholeFoodScriptBaseTwo {
+    public WebDriver driver=null;
+    ApplicationController wholeFood=null;
 
     @BeforeMethod
     public void setUp() {
@@ -47,7 +45,7 @@ public class WholeFoodScriptBase   {
          driver=new InternetExplorerDriver() ; */
 
 
-       // driver.manage().window().maximize();
+        // driver.manage().window().maximize();
         driver.navigate().to("https://www.wholefoodsmarket.com/");
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -64,7 +62,7 @@ public class WholeFoodScriptBase   {
     public void tearDown() {
         wholeFood =null;
         if (driver!=null){
-          //  driver.close();
+            //  driver.close();
             driver.quit();
         }
 
