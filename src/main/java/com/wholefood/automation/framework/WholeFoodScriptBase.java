@@ -1,12 +1,12 @@
 package com.wholefood.automation.framework;
 
+import com.wholefood.automation.framework.Reports.ExtentTestNGITestListener;
 import com.wholefood.automation.framework.controller.*;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
  * Created by jahangir shaheen on 8/12/2017.
  */
 
+@Listeners({ExtentTestNGITestListener.class})
 
 public class WholeFoodScriptBase   {
   public WebDriver driver=null;

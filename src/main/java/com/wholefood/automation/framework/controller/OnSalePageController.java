@@ -63,6 +63,7 @@ public class OnSalePageController extends SalePageModel {
 
         String[]expectedStoreLocation={"Please Select a Store","Ann Arbor - 3135 Washtenaw Ave",
                                      "Cranbrook - 990 W. Eisenhower Parkway",
+                                    "Birmingham - 2100 East Maple Road",
                                      "Detroit - 115 Mack Ave.","East Lansing - 2750 E. Grand River Ave.",
                                      "Rochester Hills - 2918 Walton Blvd",
                                       "Troy - 2880 West Maple Rd",

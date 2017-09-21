@@ -2,6 +2,7 @@ package test;
 
 import com.wholefood.automation.framework.WholeFoodScriptBase;
 import com.wholefood.automation.framework.utils.WebElementUtils;
+import org.junit.Ignore;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -148,7 +149,8 @@ public class SaleFunctionality extends WholeFoodScriptBase {
         WebElementUtils.delayFor(2000);
         wholeFood().stores().verifySalePriceTwo("any TWO (2) Just products","$1.00 off");
     }
-    @Test
+
+    @Test(enabled = false)
     public void getsalePriceThree(){
         wholeFood().homepage().goSalePage();
         WebElementUtils.delayFor(2000);
