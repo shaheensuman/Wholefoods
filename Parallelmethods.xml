@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="example suite 1" parallel="tests" thread-count="2"  >
+    <test name="Regression suite 1" >
+        <classes>
+            <class name="com.wholefood.automation.test.NavigationFuntionality"/>
+
+        </classes>
+    </test>
+</suite>

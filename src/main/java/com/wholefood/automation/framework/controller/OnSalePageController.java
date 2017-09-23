@@ -169,19 +169,31 @@ public class OnSalePageController extends SalePageModel {
     }
 
     public void cupponButonBeforeSelect(){
-        couponButton.click();
         boolean isEnable=couponButton.isEnabled();
+        try {
+            couponButton.click();
+        }catch (Exception ex){
+            ex.getStackTrace();
+        }
+
         System.out.println("Is cuppon button enabale: "+isEnable);
+        Assert.assertFalse(isEnable,"false");
     }
 
     public void cupponButonSelectStateOnly(String stateName){
         Select state=new Select(stateBox);
         state.selectByVisibleText(stateName);
         WebElementUtils.delayFor(2000);
-        couponButton.click();
         boolean isEnable=couponButton.isEnabled();
+        try {
+            couponButton.click();
+        }catch (Exception ex){
+            ex.getStackTrace();
+        }
+        Assert.assertFalse(isEnable,"false");
         System.out.println("Is cuppon button enabale: "+isEnable);
     }
+
     public void cupponButonAfterselect(String stateName,int index){
         JavascriptExecutorUtils java=new JavascriptExecutorUtils(driver);
         java.jsHighlightWebElement(stateBox);
@@ -201,6 +213,7 @@ public class OnSalePageController extends SalePageModel {
         System.out.println("Is cuppon button enabale: "+isEnable);
 
     }
+
     public void saleAndCoupon(String stateName,int index){
         Select state=new Select(stateBox);
         state.selectByVisibleText(stateName);
@@ -219,6 +232,7 @@ public class OnSalePageController extends SalePageModel {
 
 
     }
+
     public void navigateStores(String stateName,int index){
         Select state=new Select(stateBox);
         state.selectByVisibleText(stateName);

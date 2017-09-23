@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="multibrowser" parallel="none">
+    <test name="firefoxtest">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.wholefood.automation.test.CheckLinkConnectivity"/>
+        </classes>
+    </test>
+    <test name="chrometest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.wholefood.automation.test.PageMenuFunctionality"/>
+        </classes>
+    </test>
+</suite>
