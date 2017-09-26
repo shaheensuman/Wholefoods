@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="multibrowser" parallel="none" thread-count="2">
+<suite name="multibrowser" parallel="classes" thread-count="4">
     <test name="Chrome cloud">
         <parameter name="browser" value="ch-cloud"/>
         <classes>
             <class name="com.wholefood.automation.test.CheckLinkConnectivity"/>
             <class name="com.wholefood.automation.test.Kitchenfunctionlity"/>
-            <class name="com.wholefood.automation.test.SaleFunctionality"/>
+
         </classes>
     </test>
     <test name="IE cloud">
-        <parameter name="browser" value="ie-cloud"/>
+        <parameter name="browser" value="ff-cloud"/>
         <classes>
             <class name="com.wholefood.automation.test.PageMenuFunctionality"/>
             <class name="com.wholefood.automation.test.ImageFunctionality"/>
         </classes>
     </test>
     <test name="FireFox-cloud">
-        <parameter name="browser" value="ff-cloud"/>
+        <parameter name="browser" value="ie-cloud"/>
         <classes>
-            <class name="com.wholefood.automation.test.ShopingFunctionality"/>
+            <class name="com.wholefood.automation.test.ImageFunctionality"/>
         </classes>
     </test>
     <test name="Firefox test">
