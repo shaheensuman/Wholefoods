@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * Created by jahangir shaheen on 8/12/2017.
  */
 
-//@Listeners({ExtentTestNGITestListener.class})
+@Listeners({ExtentTestNGITestListener.class})
 
 public class WholeFoodScriptBase   {
 
