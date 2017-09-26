@@ -17,7 +17,7 @@ public class HomePageModel extends PageBase {
     }
 
     protected WebElement SignInLink=driver.findElement(By.xpath(".//*[@id='capture_signin_link']"));
-    protected WebElement shopOnlineLink=driver.findElement(By.linkText("Shop Online"));
+    protected WebElement shopOnlineLink=driver.findElement(By.xpath(".//*[@id='block-menu-menu-brand-camp-top']/div/ul/li[4]/a"));
     protected WebElement onSaleLink=driver.findElement(By.xpath(".//*[@id='block-menu-menu-brand-camp-top']/div/ul/li[2]/a"));
     protected WebElement RecipesPageLink=driver.findElement(By.xpath(".//*[@id='block-menu-menu-brand-camp-top']/div/ul/li[3]/a"));
     protected List<WebElement> navMenuList=driver.findElements(By.xpath(".//*[@id='block-menu-menu-brand-camp-top']/div/ul/li"));
