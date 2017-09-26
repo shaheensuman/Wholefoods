@@ -8,10 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -21,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * Created by jahangir shaheen on 8/12/2017.
  */
 
-@Listeners({ExtentTestNGITestListener.class})
+//@Listeners({ExtentTestNGITestListener.class})
 
 public class WholeFoodScriptBase   {
 
@@ -31,6 +28,8 @@ public class WholeFoodScriptBase   {
     public static final String USERNAME = "jahangirshaheen1";
     public static final String AUTOMATE_KEY = "Fa4hfLwzmSwVG9L4h2Qp";
     public static final String REMOTE_HUB = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+
+
     @Parameters("browser")
 
     @BeforeMethod
@@ -68,14 +67,15 @@ public class WholeFoodScriptBase   {
             caps.setCapability("os", "Windows");
             caps.setCapability("os_version", "10");
             caps.setCapability("resolution", "1280x1024");
-            WebDriver driver = new RemoteWebDriver(new URL(REMOTE_HUB), caps);
+            driver = new RemoteWebDriver(new URL(REMOTE_HUB), caps);
         }else if(browser.equalsIgnoreCase("ch-cloud")){
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("browser", "Chrome");
-            caps.setCapability("browser_version", "61.0");
+            caps.setCapability("browser_version", "59.0");
             caps.setCapability("os", "Windows");
-            caps.setCapability("os_version", "10");
+            caps.setCapability("os_version", "7");
             caps.setCapability("resolution", "1280x1024");
+            driver=new RemoteWebDriver(new URL(REMOTE_HUB),caps);
         }else if (browser.equalsIgnoreCase("ie-cloud")){
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("browser", "IE");
@@ -83,6 +83,7 @@ public class WholeFoodScriptBase   {
             caps.setCapability("os", "Windows");
             caps.setCapability("os_version", "10");
             caps.setCapability("resolution", "1280x1024");
+            driver= new RemoteWebDriver(new URL(REMOTE_HUB), caps);
         }
         if (browser.equalsIgnoreCase("chrome")){
             ChromeDriverManager.getInstance().setup();
@@ -122,6 +123,7 @@ public class WholeFoodScriptBase   {
 
         if (driver != null) {
             driver.close();
+
             try {
                 driver.quit();
             }catch (Exception ex){
