@@ -69,12 +69,12 @@ public class SaleFunctionality extends WholeFoodScriptBase {
         wholeFood().onSalePage().cupponButonAfterselect("Nevada",4);
     }
     @Test
-    public void getcoupon(){
+    public void changeStore(){
         wholeFood().homepage().goSalePage();
         WebElementUtils.delayFor(2000);
         wholeFood().onSalePage().cupponButonAfterselect("Nevada",4);
         WebElementUtils.delayFor(4000);
-        wholeFood().onSalePage().saleAndCoupon("New York",4);
+        wholeFood().stores().changeStore("New York",5,"Jericho");
         WebElementUtils.delayFor(3000);
     }
     @Test

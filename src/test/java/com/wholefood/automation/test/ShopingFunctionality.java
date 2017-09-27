@@ -102,7 +102,7 @@ public class ShopingFunctionality extends WholeFoodScriptBase {
         WebElementUtils.delayFor(5000);
 
     }
-    @Test
+    @Test(enabled = false)
     public void StartShoppingThree() throws InterruptedException {
         wholeFood().homepage().goShopOnlinePage();
         WebElementUtils.delayFor(3000);

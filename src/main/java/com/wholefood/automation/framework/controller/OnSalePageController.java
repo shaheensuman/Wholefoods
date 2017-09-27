@@ -94,7 +94,7 @@ public class OnSalePageController extends SalePageModel {
          couponButton.click();
          WebElementUtils.delayFor(2000);
 
-         WebElement storeMsg= driver.findElement(By.xpath(".//div[@class='store-box']/a[1]"));
+         WebElement storeMsg= driver.findElement(By.xpath(".//*[@id='breadcrumb']/div/a[2]"));
          String storeName=storeMsg.getText();
          boolean isDisplay=storeMsg.isDisplayed();
          System.out.println(isDisplay);
@@ -119,7 +119,7 @@ public class OnSalePageController extends SalePageModel {
         couponButton.click();
         WebElementUtils.delayFor(2000);
 
-        WebElement storeMsg= driver.findElement(By.xpath(".//div[@class='store-box']/a[1]"));
+        WebElement storeMsg= driver.findElement(By.xpath(".//*[@id='breadcrumb']/div/a[2]"));
         String storeName=storeMsg.getText();
         boolean isDisplay=storeMsg.isDisplayed();
         System.out.println(isDisplay);

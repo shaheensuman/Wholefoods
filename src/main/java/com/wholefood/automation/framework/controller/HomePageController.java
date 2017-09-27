@@ -30,7 +30,7 @@ public class HomePageController extends HomePageModel {
         shopOnlineLink.click();
     }
     public void goSalePage(){
-        onSaleLink.click();
+        localSaleLink.click();
     }
     public void goRecipesPage(){
         RecipesPageLink.click();
@@ -125,7 +125,7 @@ public class HomePageController extends HomePageModel {
     }
     public void assertNavMenu(){
         //findNavMenu();
-        String[] expectedMenuList={"FIND A STORE","ON SALE","RECIPES", "SHOP ONLINE","SIGN IN / REGISTER"};
+        String[] expectedMenuList={"Coupons","Local Sales","Recipes", "Shop Online","Customer Service"};
 
         String[]actualMenuList=new String[navMenuList.size()];
         int count=0;

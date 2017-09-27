@@ -115,7 +115,7 @@ public class ShopOnlineController extends ShoppingPageModel {
         passwordBox.sendKeys(password);
         signWithEmailButton.click();
         WebElementUtils.delayFor(2000);
-        WebElement mgs=driver.findElement(By.xpath(".//*[@id='signup-widget']/div/div[3]/form/div[2]/fieldset[1]/div"));
+        WebElement mgs=driver.findElement(By.xpath(".//*[@id='signup-widget']//div[text()='has already been taken']"));
         String msgtext=mgs.getText();
         String expectedMsg="has already been taken";
        // Assert.assertTrue(true,msgtext);

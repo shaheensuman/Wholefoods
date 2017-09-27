@@ -17,7 +17,7 @@ public class SignInPageController extends SignInPageModel {
         String actualTitle=driver.getTitle();
         System.out.println("Page Title : "+actualTitle);
         System.out.println("Page Url : "+driver.getCurrentUrl());
-        String expectedTitle="Sign In / Register | Whole Foods Market";
+        String expectedTitle="Sign In | Whole Foods D8";
         Assert.assertEquals(actualTitle,expectedTitle);
     }
 

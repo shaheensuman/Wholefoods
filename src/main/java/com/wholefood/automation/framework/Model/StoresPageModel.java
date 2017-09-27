@@ -24,4 +24,7 @@ public class StoresPageModel extends PageBase {
     protected List<WebElement> couponProductList=driver.findElements(By.xpath(".//*[@id='wfm-coupons-print-form']/div/div/div/div/span[2]"));
     protected List<WebElement> imageList=driver.findElements(By.xpath(".//*[@id='wfm-coupons-print-form']/div/div/div/div/div[2]//img"));
     protected List<WebElement> offPriceList=driver.findElements(By.xpath(".//*[@id='wfm-coupons-print-form']/div/div/div/div/span[1]/span"));
+    protected WebElement locationBox=driver.findElement(By.xpath(".//*[@id='edit-state']"));
+    protected WebElement storeBox=driver.findElement(By.xpath("//*[@id='edit-store']"));
+    protected WebElement storeButton=driver.findElement(By.xpath(".//*[@id='store-select-submit']"));
 }

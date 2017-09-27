@@ -34,29 +34,8 @@ public class WholeFoodScriptBase   {
 
     @BeforeMethod
     public void setUp(String browser) throws MalformedURLException {
-
-   /*    if (browser.equalsIgnoreCase("chrome")) {
-            ChromeDriverManager.getInstance().setup();
-            driver = new ChromeDriver();
-
-
-      /*  } else if (browser.equalsIgnoreCase("firefox")) {
-            String DriverPath = System.getProperty("user.dir");
-            String FFpath = DriverPath + "\\Drivers\\FF\\32bits\\geckodriver.exe";
-            System.setProperty("webdriver.gecko.driver", FFpath);
-            driver = new FirefoxDriver();
-
-      /*  } else if (browser.equalsIgnoreCase("ie")) {
-            String DriverPath = System.getProperty("user.dir");
-            String FFpath = DriverPath + "\\Drivers\\FF\\32bits\\geckodriver.exe";
-            System.setProperty("webdriver.gecko.driver", FFpath);
-            driver = new FirefoxDriver();
-        }
-
             /*    InternetExplorerDriverManager.getInstance().setup();
                   driver=new InternetExplorerDriver();    */
-
-
         System.out.println("*************before  test method*************");
 
 

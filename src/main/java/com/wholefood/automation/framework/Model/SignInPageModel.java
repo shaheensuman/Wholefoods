@@ -14,9 +14,9 @@ public class SignInPageModel  extends PageBase {
         super(driver);
     }
 
-    protected WebElement emailbox= driver.findElement(By.id("capture_signIn_traditionalSignIn_emailAddress"));
-    protected  WebElement passwordbox=driver.findElement(By.id("capture_signIn_traditionalSignIn_password"));
-    protected  WebElement signInButton=driver.findElement(By.xpath(".//*[@id='capture_signin_link']"));
+    protected WebElement emailbox= driver.findElement(By.id("email-address"));
+    protected  WebElement passwordbox=driver.findElement(By.id("login_password"));
+    protected  WebElement signInButton=driver.findElement(By.xpath(".//*[@id='login-form']/div[4]/input"));
    // private  String actualTitle=getDriver().getTitle();
 
 }

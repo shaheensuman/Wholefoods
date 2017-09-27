@@ -5,6 +5,7 @@ import com.wholefood.automation.framework.utils.WebElementUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import java.util.HashMap;
@@ -30,6 +31,20 @@ public class StoresController extends StoresPageModel {
         Assert.assertTrue(isTitle);
         Assert.assertTrue(isUrl);
 
+    }
+    public void changeStore(String stateName,int index,String expStoreName){
+        Select state=new Select(locationBox);
+        state.selectByVisibleText(stateName);
+        WebElementUtils.delayFor(2000);
+
+        Select stores=new Select(storeBox);
+        stores.selectByIndex(index);
+        WebElementUtils.delayFor(2000);
+        storeButton.click();
+        WebElementUtils.delayFor(2000);
+        WebElement store=driver.findElement(By.xpath(".//*[@id='breadcrumb']/div/a[2]"));
+        String storeName=store.getText();
+        Assert.assertEquals(storeName,expStoreName);
     }
 
     public void verifySubMenu() {
