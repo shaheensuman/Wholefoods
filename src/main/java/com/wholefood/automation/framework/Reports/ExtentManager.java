@@ -13,6 +13,7 @@ import org.testng.ITestResult;
  * Created by jahangir shaheen on 7/15/2017.
  */
 public class ExtentManager {
+    //push
     private static ExtentReports extent;
     private static ThreadLocal<ExtentTest> parentTest = new ThreadLocal<>();
     private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();

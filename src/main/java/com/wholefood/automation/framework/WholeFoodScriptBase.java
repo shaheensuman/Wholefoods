@@ -30,16 +30,16 @@ public class WholeFoodScriptBase   {
     public static final String REMOTE_HUB = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
 
-    @Parameters("browser")
+   // @Parameters("browser")
 
     @BeforeMethod
-    public void setUp(String browser) throws MalformedURLException {
+    public void setUp() throws MalformedURLException {
             /*    InternetExplorerDriverManager.getInstance().setup();
                   driver=new InternetExplorerDriver();    */
         System.out.println("*************before  test method*************");
 
 
-        if (browser.equalsIgnoreCase("ff-cloud")){
+      /*  if (browser.equalsIgnoreCase("ff-cloud")){
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("browser", "Firefox");
             caps.setCapability("browser_version", "56.0 beta");
@@ -64,18 +64,17 @@ public class WholeFoodScriptBase   {
             caps.setCapability("resolution", "1280x1024");
             driver= new RemoteWebDriver(new URL(REMOTE_HUB), caps);
         }
-        if (browser.equalsIgnoreCase("chrome")){
+        if (browser.equalsIgnoreCase("chrome")){ */
             ChromeDriverManager.getInstance().setup();
             driver=new ChromeDriver();
-        }else if(browser.equalsIgnoreCase("FireFox")){
+       /* }else if(browser.equalsIgnoreCase("FireFox")){
             // FirefoxDriverManager.getInstance().setup();
             String DriverPath = System.getProperty("user.dir");
             String FFpath = DriverPath + "\\Drivers\\FF\\32bits\\geckodriver.exe";
             System.setProperty("webdriver.gecko.driver", FFpath);
             driver = new FirefoxDriver();
 
-        }
-
+        }*/
 
         try {
             driver.navigate().to("https://www.wholefoodsmarket.com/");

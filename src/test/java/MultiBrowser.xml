@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="multibrowser" parallel="classes" thread-count="4">
+<suite name="multibrowser" parallel="classes" thread-count="2">
     <test name="Chrome cloud">
-        <parameter name="browser" value="ch-cloud"/>
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.wholefood.automation.test.CheckLinkConnectivity"/>
             <class name="com.wholefood.automation.test.Kitchenfunctionlity"/>
